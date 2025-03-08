@@ -4,3 +4,72 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+  background-image: url("../images/site/checkerboard.jpg");
+  background-color: #cccccc;
+}
+.div-body {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: white;
+  border: 6px solid lightblue;
+  border-radius: 25px;
+}
+ /* navigation */
+ nav {
+  background-color: black;
+}
+nav ul {
+  padding: 0px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+nav ul li {
+  padding: 1em;
+  color: white;
+  font: 'Roboto', sans-serif;
+  text-align: center;
+
+}
+
+
+/* Styles for phones */
+@media (max-width: 760px) { 
+  body {
+    background-color: white;
+    background-image: none;
+    position: absolute;
+  }
+  .div-body {
+    background-color: white;
+    border: none;
+  }
+  /* header */
+  .top-header {
+    display: inline;
+  }
+  .siteName a {
+    font: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-size: 2em;
+  }
+  .tools a {
+    font: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-size: 1em;
+  }
+
+
+
+
+  
+  /* footer */
+  .copyright {
+    font-size: .8em;
+    margin-bottom: 0;
+    padding-top: 40px;
+  }
+ }
