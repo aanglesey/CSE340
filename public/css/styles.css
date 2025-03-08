@@ -7,6 +7,7 @@
 
 body {
   background-image: url("../images/site/checkerboard.jpg");
+  background-size: 550px;
   background-color: #cccccc;
 }
 .div-body {
@@ -65,7 +66,7 @@ nav ul li {
 
 
 
-  
+
   /* footer */
   .copyright {
     font-size: .8em;
