@@ -24,10 +24,8 @@ invCont.buildByClassificationId = async function (req, res, next) {
  * ************************** */
 invCont.buildByIndividualView = async function (req, res, next) {
   const inventory_id = req.params.inventoryId
-  console.log('THE INVENTORY ID IS', inventory_id)
   const data = await invModel.getInventoryByInventoryId(inventory_id)
   const individualGrid = await utilities.buildInventoryGrid(data)
-  console.log(individualGrid)
   let nav = await utilities.getNav()
   const make = data.inv_make
   const model = data.inv_model

@@ -63,7 +63,7 @@ Util.buildClassificationGrid = async function(data){
 Util.buildInventoryGrid = async function(data) {
   let individualGrid
   if(data){
-    individualGrid = '<div id="individual-display> '
+    individualGrid = '<div id="individual-display"> '
     individualGrid += '<img src="' + data.inv_image 
       + '" alt="Image of '+ data.inv_make + ' ' + data.inv_model 
       + ' on CSE Motors" />'
@@ -76,6 +76,7 @@ Util.buildInventoryGrid = async function(data) {
   } else {
     individualGrid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'
   }
+  console.log('THE LINK IS', data.inv_image)
   return individualGrid
 }
 
@@ -87,14 +88,3 @@ Util.buildInventoryGrid = async function(data) {
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 module.exports = Util
-
-/*
-<div id="idividual-display> 
-  <img src=" data.inv_image " alt="Image of data.inv_make data.inv_model on CSE Motors" />
-  <h2>' + data.inv_make + ' ' + data.inv_model + ' Details</h2>' 
-  <p><strong>Price: $' + new Intl.NumberFormat('en-US').format(data.inv_price) + '</strong></p>'
-  <p><strong>Description: </strong>' + data.inv_description + '</p>'
-  <p><strong>Color: </strong>' + data.inv_color + '</p>'
-  <p><strong>Miles: </strong>' + data.inv_miles + '</p>'
-</div>
-*/
