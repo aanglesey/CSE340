@@ -1,0 +1,15 @@
+<!-- individual view with all info
+
+  * route to individual view through inventoryRoute
+  * controller funct. through invController 
+  * function to retrieve data based on inv id inventory-model
+  * function in util index to deliver data
+    => display make, model, full image (make, model, year, price promenant)-->
+
+<% if (title) { %>
+  <h1><%= title %></h1>
+  <% } else {
+  res.redirect('/')
+} %>
+
+<%- individualGrid %> 

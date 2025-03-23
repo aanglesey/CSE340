@@ -57,6 +57,28 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the individual view HTML
+* ************************************ */
+Util.buildInventoryGrid = async function(data) {
+  let individualGrid
+  if(data){
+    individualGrid = '<div id="individual-display> '
+    individualGrid += '<img src="' + data.inv_image 
+      + '" alt="Image of '+ data.inv_make + ' ' + data.inv_model 
+      + ' on CSE Motors" />'
+    individualGrid += '<h2>' + data.inv_make + ' ' + data.inv_model + ' Details</h2>' 
+    individualGrid += '<p><strong>Price: $' + new Intl.NumberFormat('en-US').format(data.inv_price) + '</strong></p>'
+    individualGrid += '<p><strong>Description: </strong>' + data.inv_description + '</p>'
+    individualGrid += '<p><strong>Color: </strong>' + data.inv_color + '</p>'
+    individualGrid += '<p><strong>Miles: </strong>' + data.inv_miles + '</p>'
+    individualGrid += '</div>'
+  } else {
+    individualGrid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'
+  }
+  return individualGrid
+}
+
 /* ******************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
@@ -65,3 +87,14 @@ Util.buildClassificationGrid = async function(data){
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 module.exports = Util
+
+/*
+<div id="idividual-display> 
+  <img src=" data.inv_image " alt="Image of data.inv_make data.inv_model on CSE Motors" />
+  <h2>' + data.inv_make + ' ' + data.inv_model + ' Details</h2>' 
+  <p><strong>Price: $' + new Intl.NumberFormat('en-US').format(data.inv_price) + '</strong></p>'
+  <p><strong>Description: </strong>' + data.inv_description + '</p>'
+  <p><strong>Color: </strong>' + data.inv_color + '</p>'
+  <p><strong>Miles: </strong>' + data.inv_miles + '</p>'
+</div>
+*/
