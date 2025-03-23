@@ -24,7 +24,7 @@ body {
   display: inline-block;
 }
 .siteName a {
-  font: 'Roboto', sans-serif;
+  /* font: 'Roboto', sans-serif; */
   text-decoration: none;
   font-size: 2em;
   color: black;
@@ -34,7 +34,7 @@ body {
   padding-top: 10px;
 }
 #tools a {
-  font: 'Roboto', sans-serif;
+  /* font: 'Roboto', sans-serif; */
   text-decoration: none;
   font-size: 1em;
   color: black;
@@ -55,7 +55,7 @@ nav ul li {
 }
 nav ul li a {
   color: white;
-  font: 'Roboto', sans-serif;
+  /* font: 'Roboto', sans-serif; */
   text-decoration: none;
 }
 nav ul li a:hover {
@@ -67,8 +67,8 @@ nav ul li a:hover {
 .hero-grid {
   margin: auto;
   display: grid;
-  grid-template-columns: 5(1fr);
-  grid-template-rows: 1;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   background-image: url("../images/vehicles/delorean.jpg");
   background-repeat: no-repeat;
   background-position: 70%;
@@ -99,7 +99,7 @@ nav ul li a:hover {
 /* Grid */
 .body-grid {
   display: grid;
-  grid-template-columns: 2(1fr);
+  grid-template-columns: 1fr 1fr;
   margin: 2%;
   margin-top: 8%;
 }
@@ -112,7 +112,7 @@ nav ul li a:hover {
 }
 /* Reviews */
 .del-review ul li {
-  font: 'Roboto', sans-serif;
+  /* font: 'Roboto', sans-serif; */
   font-size: 1.2em;
   margin-bottom: 15px;
 }
@@ -129,7 +129,7 @@ nav ul li a:hover {
   height: 100%;
 }
 .del-upgrades a {
-  font: 'Roboto', sans-serif;
+  /* font: 'Roboto', sans-serif; */
   font-size: 1.2em;
   margin: auto;
   height: 100%;
@@ -174,7 +174,7 @@ hr {
 #individual-display {
   background-color: black;
   display: grid;
-  grid-template-columns: 1fr, 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 #individual-display img {
   grid-column: 1/2;
