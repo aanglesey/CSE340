@@ -13,6 +13,7 @@ const static = require("./routes/static")
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const Util = require("./utilities")
+// const errorRoute = require("./routes/errorRoute")
 
 /* ***********************
  * View Engine Templates
@@ -33,6 +34,9 @@ app.use("/inv", inventoryRoute)
 app.use(async (req, res, next) => {
   next({status: 404, message: 'Congrats! You broke it...'})
 })
+app.use(async (req, res, next) => {
+  next({status: 500, message: 'Oh no! There was a crash. Maybe try a different route?'})
+})
 
 /* ***********************
 * Express Error Handler
@@ -42,12 +46,13 @@ app.use(async (err, req, res, next) => {
   let nav = await Util.getNav()
   console.error(`Error at: "${req.originalUrl}": ${err.message}`)
   if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  if(err.status == 500){ message = err.message} else {message = 'Oh no! There was a crash. Go watch a movie.'}
   res.render("errors/error", {
     title: err.status || 'Server Error',
     message,
     nav
   })
-})
+}) 
 
 /* ***********************
  * Local Server Information
