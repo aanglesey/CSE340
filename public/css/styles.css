@@ -63,6 +63,12 @@ nav ul li a:hover {
   background-color: white;
   padding: 5px;
 }
+/* FLASH MESSAGE */
+.notice {
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
 /* Hero image */
 .hero-grid {
   margin: auto;
@@ -189,6 +195,24 @@ hr {
 #individual-display p {
   grid-column: 2/3;
   color: black;
+}
+/* Login form */
+#login-form {
+  background-color: darkblue;
+  border: gray solid 2px;
+  border-radius: 5px;
+}
+#login-form label {
+  font: 1em;
+  color: white;
+}
+#login-email, #login-pass {
+  background-color: white;
+  border-radius: 5px;
+}
+#login-form p {
+  font: .6em;
+  color: white;
 }
 
 /* footer */
