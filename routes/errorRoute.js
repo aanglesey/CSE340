@@ -1,8 +1,9 @@
 const express = require("express")
 const router = new express.Router() 
-const invController = require("../controllers/errorController")
+const utilities = require("../utilities")
+const errorController = require("../controllers/errorController")
 
 // Route to build error
-router.get("/trigger-error", errorController.triggerError);
+router.get("/error", utilities.handleErrors(errorController.triggerError));
 
 module.exports = router;

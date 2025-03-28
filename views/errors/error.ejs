@@ -1,10 +1,13 @@
 <% if (title) { %>
 <h1><%= title %></h1>
 <% } else {
-res.redirect('/')
+    console.log("YOU HAVE NO TITLE")
+    res.redirect('/')
 } %>
+
 <% if (message) { %>
 <h1><%- message %></h1>
 <% } else {
-    redirect('/')
+    console.log("YOU HAVE NO MESSAGE")
+    res.redirect('/')
 } %> 
