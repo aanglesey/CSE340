@@ -217,10 +217,53 @@ hr {
 }
 #login-form button {
   width: 25%;
+  padding: 10px;
+}
+#login-form p.pass-require {
+  margin-top: 0;
+  margin-left: 8px;
+  font-size: .8em;
+  color: black;
 }
 #login-form p, #login-form p a {
   font: 1em;
   color: black;
+}
+/* Register form */
+#register-form {
+  background-color: lightblue;
+  border: gray solid 3px;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 50%;
+  margin: auto;
+}
+#register-form label {
+  font: 2em;
+}
+label span {
+  color: red;
+}
+#register-form input {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+}
+#register-form button {
+  width: 25%;
+  padding: 10px;
+}
+#register-form p {
+  margin-top: 0;
+  margin-left: 8px;
+  font-size: .8em;
+  color: black;
+}
+/* notice for errors */
+.notice {
+  color: red
 }
 
 /* footer */
