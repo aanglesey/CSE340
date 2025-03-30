@@ -205,9 +205,9 @@ hr {
   max-width: 50%;
   margin: auto;
 }
-#login-form label {
+/* #login-form label {
   font: 2em;
-}
+} */
 #login-email, #login-pass {
   background-color: white;
   border-radius: 5px;
@@ -238,9 +238,9 @@ hr {
   max-width: 50%;
   margin: auto;
 }
-#register-form label {
+/* #register-form label {
   font: 2em;
-}
+} */
 label span {
   color: red;
 }
@@ -265,7 +265,69 @@ label span {
 .notice {
   color: red
 }
-
+/* Management view */
+.management {
+  display: block;
+  padding: 5px;
+  font-size: 1.2em;
+}
+/* add classification view */
+#add-class-form {
+  background-color: lightblue;
+  border: gray solid 3px;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 50%;
+  margin: auto;
+}
+#add-class-form label {
+  font-size: 1.2em;
+}
+#add-class-form input {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+}
+#add-class-form span {
+  font-size: .8em;
+}
+#add-class-form button {
+  padding: 10px;
+}
+/* add vehicle view */
+#add-vehicle-form {
+  background-color: lightblue;
+  border: gray solid 3px;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 50%;
+  margin: auto;
+}
+#add-vehicle-form label {
+  font-size: 1.2em;
+}
+#add-vehicle-form select {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+#add-vehicle-form input {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+#add-vehicle-form input.vehicle-desc{
+  height: 100px;
+}
+#add-vehicle-form button {
+  padding: 10px;
+}
 /* footer */
 .copyright {
   font-size: .8em;

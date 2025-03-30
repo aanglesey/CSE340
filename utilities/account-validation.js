@@ -76,4 +76,36 @@ validate.checkRegData = async (req, res, next) => {
     next()
   }
   
+/* *****************************
+* Validation for classification
+* **************************** */
+validate.newClassificationRules = () => {
+  return [
+    // classification name is required and must be string
+    body("classification_name")
+    .trim()
+    .escape()
+    .notEmpty()
+    .isLength({ min: 2 })
+    .withMessage("Please provide a classification name."),
+  ]
+}
+
+validate.checkClassificationData = async (req, res, next) => {
+  const { classification_name } = req.body
+  let errors = []
+  errors = validationResult(req)
+  if (!errors.isEmpty()) {
+    let nav = await utilities.getNav()
+    res.render("inventory/add-classification", {
+      errors,
+      title: "Create New Classification",
+      nav,
+      classification_name,
+    })
+    return
+  }
+  next()
+}
+
   module.exports = validate

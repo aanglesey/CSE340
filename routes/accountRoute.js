@@ -15,6 +15,6 @@ router.post(
     regValidate.registationRules(),
     regValidate.checkRegData,
     utilities.handleErrors(accountController.registerAccount)
-)
-
-module.exports = router;
+) 
+ 
+module.exports = router; 

@@ -1,0 +1,23 @@
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+res.redirect('/')
+} %>
+        
+<%- messages() %>
+    
+<% if (errors) { %>
+<ul class="notice">
+<% errors.array().forEach(error => { %>
+<li><%= error.msg %></li>
+<% }) %>
+</ul>
+<% } %>
+
+<form id="add-class-form" action="/inv/add-classification" method="post">
+    <label for="classification_name">Classification Name <span class="required">*</span></label><br>
+    <input type="text" id="classification_name" name="classification_name" required placeholder="Enter Classification Name" pattern="[A-Za-z]+">
+    <span>NAME MUST BE ALPHABETIC CHARACTERS ONLY</span><br><br>
+
+    <button type="submit">Add Classification</button> <!-- can do input type=submit value=submit -->
+</form> 

@@ -37,4 +37,61 @@ invCont.buildByIndividualView = async function (req, res, next) {
   })
 }
 
+invCont.buildManagement = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("./inventory/management", {
+    title: "Vehicle Management",
+    nav,
+    errors: null
+  })
+}
+
+invCont.buildAddClassification = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/add-classification", {
+    title: "Add New Classification",
+    nav,
+    errors: null
+  })
+}
+
+/* ****************************************
+*  Process classification
+* *************************************** */
+invCont.createNewClassification = async function (req, res) {
+  let nav = await utilities.getNav()
+  const { classification_name } = req.body
+  
+  const regResult = await invModel.createNewClassification(
+    classification_name
+  ) 
+
+// need to get message working and refresh page so nav bar works 
+  if (regResult) {
+    req.flash(
+      "notice",
+      `Congratulations, you\'re classification ${classification_name} has been created.`
+    )
+    res.status(201).render("../views/inventory/management", {
+      title: "Add New Classification",
+      nav,
+    })
+  } else {
+    req.flash("notice", "Sorry, the registration failed.")
+    res.status(501).render("../views/inventory/management", {
+      title: "Registration",
+      nav, 
+    })
+  }
+}
+
+invCont.buildAddInventory = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/add-inventory", {
+    title: "Add New Vehicle",
+    nav,
+    errors: null
+  })
+}
+
 module.exports = invCont
