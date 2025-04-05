@@ -76,9 +76,33 @@ Util.buildInventoryGrid = async function(data) {
   } else {
     individualGrid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'
   }
-  console.log('THE LINK IS', data.inv_image)
+  // console.log('THE LINK IS', data.inv_image)
   return individualGrid
 }
+
+// Selection menu 
+// Util.buildSelection = async function(data) {
+//   let selection
+
+//   if(data){
+//     // let selectionArray = []
+//     // selectionArray.push(addItem)
+//     // selectionArray.forEach(selection) {
+//     //   selection = '<option value="' + data.classification_name + '">' + data.classification_name + '</option>'
+//     // }
+
+//     selection = '<select name="classification-select" id="classification-select"> '
+//     selection += '<option value="' + data.classification_name + '">' + data.classification_name + '</option>'
+//     selection += '</select>'
+//   } else {
+//     individualGrid += '<p class="notice">Sorry, no matching vehicle could be found.</p>'
+//   }
+
+  // selectionArray.forEach(selection) {
+  //   selection = '<option value="' + data.classification_name + '">' + data.classification_name + '</option>'
+//   // }
+//   return selection
+// }
 
 /* ******************************
  * Middleware For Handling Errors

@@ -86,10 +86,14 @@ invCont.createNewClassification = async function (req, res) {
 }
 
 invCont.buildAddInventory = async function (req, res, next) {
+  const data = await invModel.getClassifications
+  // const selection = await utilities.buildSelection(data)
   let nav = await utilities.getNav()
+
   res.render("inventory/add-inventory", {
     title: "Add New Vehicle",
     nav,
+    // selection,
     errors: null
   })
 }

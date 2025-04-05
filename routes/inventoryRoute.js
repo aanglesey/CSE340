@@ -36,4 +36,10 @@ router.get("/add-inventory", utilities.handleErrors(invController.buildAddInvent
 //     utilities.handleErrors(invController.createNewClassification)
 // ) 
 
+// add get route for delete
+router.get("/delete/:inventoryId", utilities.handleErrors(invController.buildAddInventory))
+
+// add post route for delete
+
+
 module.exports = router;

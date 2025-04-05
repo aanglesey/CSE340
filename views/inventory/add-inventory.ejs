@@ -18,12 +18,13 @@ res.redirect('/')
 
 <form id="add-vehicle-form" action="/inv/add-inventory" method="post">
     <label for="classification_id">Classification: <span class="required">*</span></label><br>
-    <select id="fruits" name="fruits">
-        <option value="apple">Apple</option>
-        <option value="banana">Banana</option> <!-- Make for each for each class id -->
-        <option value="cherry">Cherry</option>
-        <option value="grape">Grape</option>
-    </select><br>
+    <select name="classification-selection" id="">
+        <option value="Custom">Custom</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Sport">Sport</option>
+        <option value="SUV">SUV</option>
+        <option value="Truck">Truck</option>
+    </select>
 
     <label for="inv_make">Make <span class="required">*</span></label><br>
     <input type="text" id="inv_make" name="inv_make" required placeholder="Min of 3 characters">

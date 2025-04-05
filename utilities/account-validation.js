@@ -101,6 +101,7 @@ validate.checkClassificationData = async (req, res, next) => {
       errors,
       title: "Create New Classification",
       nav,
+      errors: null,
       classification_name,
     })
     return
