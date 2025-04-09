@@ -104,6 +104,16 @@ Util.buildInventoryGrid = async function(data) {
 //   return selection
 // }
 
+Util.buildAccountView = async function(data) {
+  let accountView
+  if(data){
+    accountView = '<h1>You are logged in</h1>'
+  } else {
+    accountView += '<p class="notice">Sorry, login error.</p>'
+  }
+  return accountView
+}
+
 /* ******************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

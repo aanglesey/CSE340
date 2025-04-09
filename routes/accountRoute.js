@@ -12,9 +12,19 @@ router.get("/register", utilities.handleErrors(accountController.buildRegister))
 // process resgister account
 router.post(
     "/register", 
-    regValidate.registationRules(),
+    regValidate.registrationRules(),
     regValidate.checkRegData,
     utilities.handleErrors(accountController.registerAccount)
 ) 
- 
+ // Process the login request
+router.post(
+    "/login",
+    regValidate.registrationRules(),
+    regValidate.checkRegData,
+    utilities.handleErrors(accountController.accountLogin)
+  )
+
+// Login Message Route
+router.get("/account", utilities.handleErrors(accountController.buildAccountManagement))
+
 module.exports = router; 
