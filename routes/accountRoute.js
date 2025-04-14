@@ -25,6 +25,6 @@ router.post(
   )
 
 // Login Message Route
-router.get("/account", utilities.handleErrors(accountController.buildAccountManagement))
+router.get("/account-management", utilities.handleErrors(accountController.buildAccountManagement))
 
 module.exports = router; 
